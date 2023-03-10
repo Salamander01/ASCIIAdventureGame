@@ -7,11 +7,14 @@
 
 
 #include <vector>
+#include "World.h"
 
 class IO {
 public:
-    static void update(std::vector<std::string> world);
+    void update(World world);
 
+private:
+    char backgroundColor;
 };
 
 

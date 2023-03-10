@@ -3,4 +3,4 @@ project(ASCIIAdventureGame)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ASCIIAdventureGame main.cpp Player.h Player.cpp IO.cpp IO.h World.cpp World.h)
+add_executable(ASCIIAdventureGame main.cpp Player.h Player.cpp IO.cpp IO.h World.cpp World.h Item.cpp Item.h Monster.cpp Monster.h)

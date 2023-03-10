@@ -8,12 +8,16 @@
 
 #include <string>
 #include <vector>
+#include "Item.h"
+#include "Monster.h"
 
 class World {
 public:
 
 private:
-    std::vector<std::string> world;
+    // TODO create a world variable / vector of type Space?
+    std::vector<Item> items;
+    std::vector<Monster> monsters;
 
 };
 
