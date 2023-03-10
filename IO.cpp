@@ -9,7 +9,7 @@ using namespace std;
 
 
 void IO::update(std::vector<std::string> world) {
-    // TODO put cursor at point 0,0
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {0, 0});
     for (const string& row : world) {
         cout << row;
     }
