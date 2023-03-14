@@ -15,8 +15,10 @@ public:
     Level(std::vector<Space> world, std::vector<Item> items, std::vector<Monster> monsters);
     ~Level();
 
-    friend std::ostream &operator<< (std::ofstream &out, const Level &world);
-    friend std::ostream &operator>> (std::ifstream &out, const Level &world);
+    std::vector<Space> getWorld();
+
+    friend std::fstream &operator<< (std::fstream &out, const Level &world);
+    friend std::fstream &operator>> (std::fstream &out, const Level &world);
 
 private:
     std::vector<Space> world;

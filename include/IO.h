@@ -8,7 +8,9 @@
 
 class IO {
 public:
-    void update(Level world);
+    IO();
+
+    void update(Level level);
 
 private:
     char backgroundColor;

@@ -6,7 +6,11 @@
 using namespace std;
 
 
-void IO::update(Level world) {
+void IO::update(Level level) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {0, 0});
-    // TODO create world to then create a way to output the world
+
+}
+
+IO::IO() {
+    this->backgroundColor = '0';
 }
