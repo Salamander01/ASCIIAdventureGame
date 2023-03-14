@@ -12,8 +12,8 @@ public:
     char getSymbol();
     bool getPassable();
 
-    friend std::ostream &operator<< (std::ostream &out, const Space &space);
-    friend std::ostream &operator>> (std::ostream &out, const Space &space);
+    friend std::ostream &operator<< (std::ofstream &out, const Space &space);
+    friend std::ostream &operator>> (std::ifstream &out, const Space &space);
 
 private:
     char symbol;
