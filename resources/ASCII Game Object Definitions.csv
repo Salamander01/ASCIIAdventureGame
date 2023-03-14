@@ -1,0 +1,3 @@
+//NAME (The name of your object),//SYMBOL (What symbol is this?),//Passable? (can the player pass through this thing. Yes or No)
+Brick Wall,#,No
+Air,.,Y
