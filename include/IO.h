@@ -1,17 +1,14 @@
-//
-// Created by 24SFAERBER on 3/10/2023.
-//
 
 #ifndef ASCIIADVENTUREGAME_IO_H
 #define ASCIIADVENTUREGAME_IO_H
 
 
 #include <vector>
-#include "World.h"
+#include "Level.h"
 
 class IO {
 public:
-    void update(World world);
+    void update(Level world);
 
 private:
     char backgroundColor;
