@@ -1,6 +1,3 @@
-//
-// Created by sfaer on 3/14/2023.
-//
 
 #ifndef ASCIIADVENTUREGAME_LOADER_H
 #define ASCIIADVENTUREGAME_LOADER_H

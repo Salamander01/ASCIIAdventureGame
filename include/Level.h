@@ -17,8 +17,8 @@ public:
 
     std::vector<Space> getWorld();
 
-    friend std::fstream &operator<< (std::fstream &out, const Level &world);
-    friend std::fstream &operator>> (std::fstream &out, const Level &world);
+    friend std::fstream &operator<< (std::fstream &out, const Level &level);
+    friend Level &operator>> (std::fstream &in, const Level &level);
 
 private:
     std::vector<Space> world;
