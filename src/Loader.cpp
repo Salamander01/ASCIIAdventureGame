@@ -8,8 +8,6 @@ Loader::Loader() = default;
 
 Level Loader::loadLevel() {
     Level level;
-
-    this->loadSpaceTypes();
     
     fstream levelFile;
     levelFIle.open("resources/World Export Template.csv");
@@ -19,9 +17,13 @@ Level Loader::loadLevel() {
     return level;
 }
 
-void Loader::loadSpaceTypes() {
+map<char, Space> Loader::loadSpaceTypes() {
+    map<char, Space> spaceTypes;
+
     fstream spaceTypesFile;
     spaceTypesFile.open("resources/ASCII Game Object Definitions.csv", ios::in);
 
-    spaceTypesFile >> this->spacetypes;
+    spaceTypesFile >> spaceTypes;
+
+    return spaceTypes;
 }

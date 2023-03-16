@@ -12,10 +12,8 @@ public:
 
     Level loadLevel();
 
-private:
-    void loadSpaceTypes();
-
-    std::map<char, Space> spaceTypes;
+    std::map<char, Space> loadSpaceTypes();
+    
 };
 
 
