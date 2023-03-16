@@ -30,9 +30,6 @@ private:
     bool passable;
 
     std::string name;
-
-    // Friend attribute from Loader.h
-    friend std::map<char, Space> spaceTypes; // TODO may or may not work. Test with CLion.
 };
 
 
