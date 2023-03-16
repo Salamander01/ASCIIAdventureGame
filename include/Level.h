@@ -11,8 +11,10 @@
 
 class Level {
 public:
-
+    // Constructors and Destructors
+    Level();
     Level(std::vector<Space> world, std::vector<Item> items, std::vector<Monster> monsters);
+
     ~Level();
 
     std::vector<Space> getWorld();

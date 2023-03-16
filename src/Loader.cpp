@@ -8,7 +8,7 @@ Level Loader::loadLevel() {
     Level level;
     
     fstream levelFile;
-    levelFIle.open("resources/World Export Template.csv");
+    levelFile.open("resources/World Export Template.csv");
 
     levelFile >> level;
 
