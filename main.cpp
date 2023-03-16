@@ -6,8 +6,7 @@ using namespace std;
 
 int main() {
     // Simple code for testing purposes once the classes used are implemented.
-    Loader gameLoader;
-    Level mainLevel = gameLoader.loadLevel();
+    Level mainLevel = gameLoader::loadLevel();
 
     IO io;
 

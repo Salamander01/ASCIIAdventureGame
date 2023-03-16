@@ -5,7 +5,12 @@
 
 // Abstract class
 class Item {
+public:
+    // TODO needs pickup/put down methods for taking it in and out of inventories
 
+private:
+    // TODO needs a position object
+    //
 };
 
 

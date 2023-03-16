@@ -8,6 +8,10 @@ public:
     // Constructor and destructor
     Player();
     ~Player();
+
+private:
+    // TODO create a position or location object/c++ record equivelant
+    // TODO consider creating an inventory
 };
 
 

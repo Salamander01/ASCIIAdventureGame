@@ -4,8 +4,6 @@
 
 using namespace std;
 
-Loader::Loader() = default;
-
 Level Loader::loadLevel() {
     Level level;
     
