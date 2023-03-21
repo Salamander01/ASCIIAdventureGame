@@ -9,6 +9,6 @@ IO::IO() {
 }
 
 void IO::update(Level level) {
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {0, 0});
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {0, 0}); // Constantly puts cursor to the 0,0 position.
 
 }
