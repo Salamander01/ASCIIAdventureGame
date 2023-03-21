@@ -4,13 +4,16 @@
 
 
 // Abstract class
+// Contains the basic methods and attributes required for all item objects; inherited by the various item types that
+// game designer might want.
+// Because of how we are doing csv template files, inherited item classes will be more along the lines of Drink, Food,
+// Weapon (maybe different types of weapons as well), light, etc)
 class Item {
 public:
-    // TODO needs pickup/put down methods for taking it in and out of inventories
 
 private:
     // TODO needs a position object
-    //
+    // TODO needs color and symbol information
 };
 
 

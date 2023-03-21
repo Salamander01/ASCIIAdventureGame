@@ -8,9 +8,7 @@
 
 class Loader {
 public:
-    static Level loadLevel();
 
-    static std::map<char, Space> loadSpaceTypes();
     
 };
 

@@ -6,16 +6,19 @@
 #include <vector>
 #include "Level.h"
 
+// Manages runtime IO (printing the game to the console and getting active user input)
 class IO {
 public:
-    // Constructors (only a basic default constructor right now)
+    // Constructors and destructor
+
+    // Default Constructor
     IO();
 
-    // redraws the console window with the level object given.
-    // Probably should consider not requiring the level object to be passed in, because other information such as items and monsters and the player object are not included in it (the information should come from somewhere else).
+    // Redraws the console window with the level object given.
     void update(Level level);
 
 private:
+    // A single character to represent the background color when displaying.
     char backgroundColor;
 };
 

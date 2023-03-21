@@ -9,6 +9,7 @@
 #include "Monster.h"
 #include "Space.h"
 
+// A class that deals with a single level. Currently we are only planning on making support for single level games, so this class is essentially the world for now.
 class Level {
 public:
     // Constructors and Destructors
@@ -17,14 +18,32 @@ public:
 
     ~Level();
 
-    std::vector<Space> getWorld();
+    // Struct
 
+    struct LevelPosition {
+        int col;
+        int row;
+    };
+
+    // Getters
+
+    // Get the 2d level array (probably for printing. It's what the IO class will use to print out the level).
+    std::vector<std::vector<Space>> getWorld();
+    // Get the items in this level (primarily for printing. Probably also for inventory management).
+    std::vector<Item> getItems();
+    //
+    std::vector<Monster> getMonsters();
+
+    // Overloaded operators for saving and loading from a file. Will not load and save from template files but from save files.
     friend std::fstream &operator<< (std::fstream &out, const Level &level);
     friend Level &operator>> (std::fstream &in, const Level &level);
 
 private:
-    std::vector<Space> world;
+    // 2d array that stores all the Space objects
+    std::vector<std::vector<Space>> world;
+    // Items in the current level. Item locations are stored in the item objects themselves.
     std::vector<Item> items;
+    // Stored similarly to the items. Monsters locations are stored in their individual objects (may or may not be a good idea. We'll see).
     std::vector<Monster> monsters;
 
 };
