@@ -14,8 +14,8 @@ class Level {
 public:
     // Constructors and Destructors
     Level();
-    // TODO Insanely broken
-//    Level(std::vector<Space> world, std::vector<Item> items, std::vector<Monster> monsters);
+    // TODO Insanely broken (kind of working)
+    Level(std::vector<Space> world, std::vector<Item> items, std::vector<Monster> monsters);
 
 //    ~Level();
 
@@ -29,8 +29,8 @@ public:
     // Getters
 
     // Get the 2d level array (probably for printing. It's what the IO class will use to print out the level).
-    // TODO insanely broken
-//    std::vector<std::vector<Space>> getWorld();
+    // TODO insanely broken (kind of working)
+    std::vector<std::vector<Space>> getWorld();
     // Get the items in this level (primarily for printing. Probably also for inventory management).
     std::vector<Item> getItems();
     // Get the monsters in the current level (primarily for printing)
@@ -43,8 +43,8 @@ public:
 
 private:
     // 2d array that stores all the Space objects
-    // TODO insanely broken
-//    std::vector<std::vector<Space>> world;
+    // TODO insanely broken (kind of working)
+    std::vector<std::vector<Space>> world;
     // Items in the current level. Item locations are stored in the item objects themselves.
     std::vector<Item> items;
     // Stored similarly to the items. Monsters locations are stored in their individual objects (may or may not be a good idea. We'll see).

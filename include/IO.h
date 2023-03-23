@@ -3,7 +3,6 @@
 #define ASCIIADVENTUREGAME_IO_H
 
 
-#include <vector>
 #include "Level.h"
 
 // Manages runtime IO (printing the game to the console and getting active user input)

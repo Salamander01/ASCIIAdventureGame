@@ -3,9 +3,6 @@
 #define ASCIIADVENTUREGAME_LOADER_H
 
 
-#include <map>
-#include "Level.h"
-
 class Loader {
 public:
 
