@@ -1,6 +1,6 @@
 
 #include <windows.h>
-#include "../include/IO.h"
+#include "include/IO.h"
 
 using namespace std;
 

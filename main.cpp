@@ -1,18 +1,19 @@
 
-#include "include/Loader.h"
-#include "include/IO.h"
+#include <iostream>
 
 using namespace std;
 
 int main() {
     // Simple code for testing purposes once the classes used are implemented.
-    Level mainLevel = Loader::loadLevel();
+//    Level mainLevel = Loader::loadLevel();
+//
+//    IO io;
+//
+//    io.update(mainLevel);
+//
+//    while (true);
 
-    IO io;
-
-    io.update(mainLevel);
-
-    while (true);
+    cout << "Hello World!";
 
     return 0;
 }

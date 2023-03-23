@@ -3,4 +3,6 @@ project(ASCIIAdventureGame)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ASCIIAdventureGame main.cpp include/Player.h src/Player.cpp src/IO.cpp include/IO.h src/Level.cpp include/Level.h src/Item.cpp include/Item.h src/Monster.cpp include/Monster.h src/Space.cpp include/Space.h src/Loader.cpp include/Loader.h src/SaveFileManager.cpp include/SaveFileManager.h)
+add_executable(ASCIIAdventureGame main.cpp IO.cpp Item.cpp Level.cpp Loader.cpp Monster.cpp Player.cpp SaveFileManager.cpp Space.cpp)
+
+target_include_directories(ASCIIAdventureGame PUBLIC ${PROJECT_SOURCE_DIR}/include)

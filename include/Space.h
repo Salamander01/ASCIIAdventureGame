@@ -21,8 +21,9 @@ public:
     bool getPassable();
 
     // Overloaded operators
-    friend std::fstream &operator<< (std::fstream &out, const Space &space);
-    friend std::map<char, Space> &operator>> (std::fstream &in, const std::map<char, Space> &spaceTypes);
+    // TODO
+//    friend std::fstream &operator<< (std::fstream &out, const Space &space);
+//    friend std::map<char, Space> &operator>> (std::fstream &in, const std::map<char, Space> &spaceTypes);
 
 private:
     // Attributes
