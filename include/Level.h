@@ -14,7 +14,6 @@ class Level {
 public:
     // Constructors and Destructors
     Level();
-    // TODO Insanely broken (kind of working)
     Level(std::vector<Space> world, std::vector<Item> items, std::vector<Monster> monsters);
 
 //    ~Level();
@@ -29,7 +28,6 @@ public:
     // Getters
 
     // Get the 2d level array (probably for printing. It's what the IO class will use to print out the level).
-    // TODO insanely broken (kind of working)
     std::vector<std::vector<Space>> getWorld();
     // Get the items in this level (primarily for printing. Probably also for inventory management).
     std::vector<Item> getItems();
@@ -38,12 +36,11 @@ public:
 
     // Overloaded operators for saving and loading from a file. Will not load and save from template files but from save files.
     // TODO
-//    friend std::fstream &operator<< (std::fstream &out, const Level &level);
-//    friend Level &operator>> (std::fstream &in, const Level &level);
+    friend std::fstream &operator<< (std::fstream &out, const Level &level);
+    friend Level &operator>> (std::fstream &in, const Level &level);
 
 private:
     // 2d array that stores all the Space objects
-    // TODO insanely broken (kind of working)
     std::vector<std::vector<Space>> world;
     // Items in the current level. Item locations are stored in the item objects themselves.
     std::vector<Item> items;

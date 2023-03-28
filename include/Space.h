@@ -3,6 +3,7 @@
 #define ASCIIADVENTUREGAME_SPACE_H
 
 #include <iostream>
+#include <map>
 
 class Space {
 public:
@@ -19,8 +20,8 @@ public:
     bool getPassable();
 
     // Overloaded operators
-    // TODO Overload bitstream operators
-//    friend std::fstream &operator<< (std::fstream &out, const Space &space);
+    friend std::fstream &operator<< (std::fstream &out, const Space &space);
+    // TODO DOESNT SUPPORT MULTIPLE SPACES WITH THE SAME CHARACTER
 //    friend std::map<char, Space> &operator>> (std::fstream &in, const std::map<char, Space> &spaceTypes);
 
 private:
