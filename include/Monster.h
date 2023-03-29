@@ -4,17 +4,16 @@
 
 #include "Level.h"
 
-// Abstract class
 class Monster {
 public:
-    virtual int getPosX();
-    virtual int getPosY();
+    int getPosX();
+    int getPosY();
 
-    virtual char getColor();
-    virtual char getSymbol();
+    char getColor();
+    char getSymbol();
 
 private:
-    Level::Position position{};
+     Level::Position position{};
     char color{};
     char symbol{};
 };

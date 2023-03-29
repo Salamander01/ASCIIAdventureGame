@@ -21,11 +21,17 @@ public:
     // Load a CSV file found at the file path from the resources root
     static std::vector<std::vector<std::string>> readCSV(const std::string& filePath);
 
+    // General IO
+
+    static std::string promptString(std::string prompt);
+    static bool promptBool(std::string prompt);
+    static int promptInt(std::string prompt);
+
 private:
     // A string split method taken from favtutor.com
     static std::vector<std::string> split(std::string str, char separator);
 
-    void setPrintColor(char textColor);
+    void setPrintColor(char textColor) const;
 
     static void setCursorPosition(int x, int y);
 

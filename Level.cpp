@@ -1,14 +1,39 @@
 
 #include <utility>
+#include <fstream>
 
-#include "include/Level.h"
+#include "Level.h"
 
 using namespace std;
 
 Level::Level() = default;
 
 Level::Level(std::vector<std::vector<Space>> world, std::vector<Item> items, std::vector<Monster> monsters) {
-    this->world = std::move(world);
+    this->levelVector = std::move(world);
     this->items = std::move(items);
     this->monsters = std::move(monsters);
+}
+
+std::vector<std::vector<Space>> Level::getVectorArray() {
+    return this->levelVector;
+}
+
+std::vector<Item> Level::getItems() {
+    return this->items;
+}
+
+std::vector<Monster> Level::getMonsters() {
+    return this->monsters;
+}
+
+std::ostream &operator<<(ostream &out, const Level &level) {
+    for (vector<Space> row : level.levelVector) {
+        for (Space space : row) {
+            out << space;
+            out << ",";
+        }
+        out << "\n";
+    }
+    out << "\n";
+    return out;
 }

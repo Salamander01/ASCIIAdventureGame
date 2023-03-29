@@ -8,12 +8,10 @@
 class Space {
 public:
     // Constructors
-//    Space(char symbol, bool passable, std::string name);
-//    Space(const Space &space);
     Space();
+    Space(char symbol, bool passable, std::string name);
+//    Space(const Space &space);
 
-    // Destructor (may not actually be needed)
-    ~Space();
 
     // Getters
     char getSymbol();
@@ -21,9 +19,8 @@ public:
     char getColor();
 
     // Overloaded operators
-    friend std::fstream &operator<< (std::fstream &out, const Space &space);
-    // TODO DOESNT SUPPORT MULTIPLE SPACES WITH THE SAME CHARACTER
-//    friend std::map<char, Space> &operator>> (std::fstream &in, const std::map<char, Space> &spaceTypes);
+    friend std::ostream &operator<< (std::ostream &out, const Space &space);
+    friend std::fstream &operator>> (std::fstream &in, std::fstream &spaceTypes);
 
 private:
     // Attributes

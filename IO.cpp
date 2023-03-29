@@ -1,6 +1,7 @@
 
 #include <windows.h>
 #include <fstream>
+
 #include "IO.h"
 
 using namespace std;
@@ -14,7 +15,7 @@ void IO::output(Level level) {
 
     // Print the spaces
     vector<vector<Space>> spaceVector = level.getVectorArray();
-    for (vector<Space> spaceVectorRow : spaceVector) {
+    for (const vector<Space>& spaceVectorRow : spaceVector) {
         for (Space space : spaceVectorRow) {
             setPrintColor(space.getColor());
             cout << space.getSymbol();
@@ -40,7 +41,7 @@ void IO::output(Level level) {
 
 }
 
-void IO::setPrintColor(char textColor) {
+void IO::setPrintColor(char textColor) const {
     string colorCommand = "Color ";
     colorCommand.push_back(this->backgroundColor);
     colorCommand.push_back(textColor);
