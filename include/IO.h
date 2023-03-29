@@ -14,9 +14,16 @@ public:
     IO();
 
     // Redraws the console window with the level object given.
-    void update(Level level);
+    void output(Level level);
+
+    // CSV management methods
+
+    static std::vector<std::vector<std::string>> readCSV(const std::string& fileName);
 
 private:
+    // A string split method taken from favtutor.com
+    static std::vector<std::string> split(std::string str, char separator);
+
     // A single character to represent the background color when displaying.
     char backgroundColor;
 };
