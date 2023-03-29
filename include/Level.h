@@ -14,12 +14,11 @@ class Level {
 public:
     // Constructors and Destructors
     Level();
-    Level(std::vector<Space> world, std::vector<Item> items, std::vector<Monster> monsters);
-
-//    ~Level();
+    Level(std::vector<std::vector<Space>> world, std::vector<Item> items, std::vector<Monster> monsters);
 
     // Struct
 
+    // A position structure for keeping track of the player, items, and monsters
     struct Position {
         int x;
         int y;
