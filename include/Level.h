@@ -27,7 +27,7 @@ public:
     // Getters
 
     // Get the 2d level array (probably for printing. It's what the IO class will use to output the level).
-    std::vector<std::vector<Space>> getWorld();
+    std::vector<std::vector<Space>> getVectorArray();
     // Get the items in this level (primarily for printing. Probably also for inventory management).
     std::vector<Item> getItems();
     // Get the monsters in the current level (primarily for printing)

@@ -18,6 +18,7 @@ public:
     // Getters
     char getSymbol();
     bool getPassable();
+    char getColor();
 
     // Overloaded operators
     friend std::fstream &operator<< (std::fstream &out, const Space &space);
@@ -27,6 +28,7 @@ public:
 private:
     // Attributes
     char symbol;
+    char color;
     bool passable;
 
     std::string name;

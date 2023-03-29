@@ -2,6 +2,7 @@
 #ifndef ASCIIADVENTUREGAME_ITEM_H
 #define ASCIIADVENTUREGAME_ITEM_H
 
+#include "Level.h"
 
 // Abstract class
 // Contains the basic methods and attributes required for all item objects; inherited by the various item types that
@@ -11,9 +12,16 @@
 class Item {
 public:
 
+    virtual int getPosX();
+    virtual int getPosY();
+
+    virtual char getColor();
+    virtual char getSymbol();
+
 private:
-    // TODO needs a position object
-    // TODO needs color and symbol information
+    Level::Position position{};
+    char color{};
+    char symbol{};
 };
 
 

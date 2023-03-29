@@ -18,11 +18,16 @@ public:
 
     // CSV management methods
 
-    static std::vector<std::vector<std::string>> readCSV(const std::string& fileName);
+    // Load a CSV file found at the file path from the resources root
+    static std::vector<std::vector<std::string>> readCSV(const std::string& filePath);
 
 private:
     // A string split method taken from favtutor.com
     static std::vector<std::string> split(std::string str, char separator);
+
+    void setPrintColor(char textColor);
+
+    static void setCursorPosition(int x, int y);
 
     // A single character to represent the background color when displaying.
     char backgroundColor;

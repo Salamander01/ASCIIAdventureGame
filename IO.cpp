@@ -10,14 +10,51 @@ IO::IO() {
 }
 
 void IO::output(Level level) {
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {0, 0}); // Constantly puts cursor to the 0,0 position.
+    setCursorPosition(0, 0);
+
+    // Print the spaces
+    vector<vector<Space>> spaceVector = level.getVectorArray();
+    for (vector<Space> spaceVectorRow : spaceVector) {
+        for (Space space : spaceVectorRow) {
+            setPrintColor(space.getColor());
+            cout << space.getSymbol();
+        }
+        cout << "\n";
+    }
+
+    // Print the items
+    vector<Item> items = level.getItems();
+    for (Item item : items) {
+        setCursorPosition(item.getPosX(), item.getPosY());
+        setPrintColor(item.getColor());
+        cout << item.getSymbol();
+    }
+
+    // Print the monsters
+    vector<Monster> monsters = level.getMonsters();
+    for (Monster monster : monsters) {
+        setCursorPosition(monster.getPosX(), monster.getPosY());
+        setPrintColor(monster.getColor());
+        cout << monster.getSymbol();
+    }
 
 }
 
-std::vector<std::vector<std::string>> IO::readCSV(const std::string& fileName) {
+void IO::setPrintColor(char textColor) {
+    string colorCommand = "Color ";
+    colorCommand.push_back(this->backgroundColor);
+    colorCommand.push_back(textColor);
+    system(colorCommand.data());
+}
+
+void IO::setCursorPosition(int x, int y) {
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {static_cast<SHORT>(x), static_cast<SHORT>(y)});
+}
+
+std::vector<std::vector<std::string>> IO::readCSV(const std::string& filePath) {
     fstream fin;
     
-    fin.open(fileName, ios::in);
+    fin.open(filePath, ios::in);
     
     string fileString;
     fin >> fileString;
