@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include "Level.h"
 
 using namespace std;
 
@@ -12,6 +13,8 @@ int main() {
 //    io.update(mainLevel);
 //
 //    while (true);
+
+    Level::LevelPosition pos;
 
     cout << "Hello World!";
 
