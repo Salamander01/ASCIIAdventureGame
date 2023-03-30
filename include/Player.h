@@ -1,18 +1,18 @@
 
-#ifndef UNTITLED_PLAYER_H
-#define UNTITLED_PLAYER_H
+#ifndef ASCIIADVENTUREGAME_PLAYER_H
+#define ASCIIADVENTUREGAME_PLAYER_H
 
 
-class Player {
+#include "Structs.h"
+
+class Player { // TODO
 public:
     // Constructor and destructor
     Player();
-    ~Player();
 
 private:
-    // TODO create a position or location object/c++ record equivelant
-    // TODO consider creating an inventory
+    LevelPos position;
 };
 
 
-#endif //UNTITLED_PLAYER_H
+#endif //ASCIIADVENTUREGAME_PLAYER_H

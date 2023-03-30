@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+
 #include "Item.h"
 #include "Monster.h"
 #include "Space.h"
@@ -14,29 +15,25 @@ class Level {
 public:
     // Constructors and Destructors
     Level();
+
     Level(std::vector<std::vector<Space>> world, std::vector<Item> items, std::vector<Monster> monsters);
-
-    // Struct
-
-    // A position structure for keeping track of the player, items, and monsters
-    struct Position {
-        int x;
-        int y;
-    };
 
     // Getters
 
     // Get the 2d level array (probably for printing. It's what the IO class will use to output the level).
     std::vector<std::vector<Space>> getVectorArray();
+
     // Get the items in this level (primarily for printing. Probably also for inventory management).
     std::vector<Item> getItems();
+
     // Get the monsters in the current level (primarily for printing)
     std::vector<Monster> getMonsters();
 
     // Overloaded operators for saving and loading from a file. Will NOT load and save from template files but from save files.
 
-    friend std::ostream &operator<< (std::ostream &out, const Level &level);
-    friend Level &operator>> (std::fstream &in, const Level &level);
+    friend std::ostream &operator<<(std::ostream &out, const Level &level);
+
+    friend Level &operator>>(std::fstream &in, const Level &level); // TODO
 
 private:
     // 2d array that stores all the Space objects

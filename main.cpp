@@ -13,7 +13,7 @@ int main() {
 //
 //    while (true);
 
-    cout << "Hello World!" << true;
+    cout << "Hello World!";
 
     return 0;
 }

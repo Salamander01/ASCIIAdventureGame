@@ -27,8 +27,8 @@ std::vector<Monster> Level::getMonsters() {
 }
 
 std::ostream &operator<<(ostream &out, const Level &level) {
-    for (vector<Space> row : level.levelVector) {
-        for (Space space : row) {
+    for (const vector<Space> &row: level.levelVector) {
+        for (const Space &space: row) {
             out << space;
             out << ",";
         }

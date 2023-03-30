@@ -2,6 +2,7 @@
 #ifndef ASCIIADVENTUREGAME_SPACE_H
 #define ASCIIADVENTUREGAME_SPACE_H
 
+
 #include <iostream>
 #include <map>
 
@@ -9,18 +10,22 @@ class Space {
 public:
     // Constructors
     Space();
+
     Space(char symbol, bool passable, std::string name);
 //    Space(const Space &space);
 
 
     // Getters
-    char getSymbol();
-    bool getPassable();
-    char getColor();
+    [[nodiscard]] char getSymbol() const;
+
+    [[nodiscard]] bool getPassable() const;
+
+    [[nodiscard]] char getColor() const;
 
     // Overloaded operators
-    friend std::ostream &operator<< (std::ostream &out, const Space &space);
-    friend std::fstream &operator>> (std::fstream &in, std::fstream &spaceTypes);
+    friend std::ostream &operator<<(std::ostream &out, const Space &space);
+
+    friend Space &operator>>(std::ostream &in, Space &space); // TODO
 
 private:
     // Attributes

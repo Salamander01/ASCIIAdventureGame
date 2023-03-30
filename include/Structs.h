@@ -1,0 +1,10 @@
+
+#ifndef ASCIIADVENTUREGAME_STRUCTS_H
+#define ASCIIADVENTUREGAME_STRUCTS_H
+
+struct LevelPos {
+    int x;
+    int y;
+};
+
+#endif //ASCIIADVENTUREGAME_STRUCTS_H

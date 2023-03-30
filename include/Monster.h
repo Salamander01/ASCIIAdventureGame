@@ -2,18 +2,21 @@
 #ifndef ASCIIADVENTUREGAME_MONSTER_H
 #define ASCIIADVENTUREGAME_MONSTER_H
 
-#include "Level.h"
+
+#include "Structs.h"
 
 class Monster {
 public:
-    int getPosX();
-    int getPosY();
+    [[nodiscard]] int getPosX() const;
 
-    char getColor();
-    char getSymbol();
+    [[nodiscard]] int getPosY() const;
+
+    [[nodiscard]] char getColor() const;
+
+    [[nodiscard]] char getSymbol() const;
 
 private:
-     Level::Position position{};
+    LevelPos position{};
     char color{};
     char symbol{};
 };

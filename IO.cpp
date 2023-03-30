@@ -15,8 +15,8 @@ void IO::output(Level level) {
 
     // Print the spaces
     vector<vector<Space>> spaceVector = level.getVectorArray();
-    for (const vector<Space>& spaceVectorRow : spaceVector) {
-        for (Space space : spaceVectorRow) {
+    for (const vector<Space> &spaceVectorRow: spaceVector) {
+        for (const Space &space: spaceVectorRow) {
             setPrintColor(space.getColor());
             cout << space.getSymbol();
         }
@@ -25,7 +25,7 @@ void IO::output(Level level) {
 
     // Print the items
     vector<Item> items = level.getItems();
-    for (Item item : items) {
+    for (Item item: items) {
         setCursorPosition(item.getPosX(), item.getPosY());
         setPrintColor(item.getColor());
         cout << item.getSymbol();
@@ -33,7 +33,7 @@ void IO::output(Level level) {
 
     // Print the monsters
     vector<Monster> monsters = level.getMonsters();
-    for (Monster monster : monsters) {
+    for (Monster monster: monsters) {
         setCursorPosition(monster.getPosX(), monster.getPosY());
         setPrintColor(monster.getColor());
         cout << monster.getSymbol();
@@ -52,25 +52,25 @@ void IO::setCursorPosition(int x, int y) {
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {static_cast<SHORT>(x), static_cast<SHORT>(y)});
 }
 
-std::vector<std::vector<std::string>> IO::readCSV(const std::string& filePath) {
+std::vector<std::vector<std::string>> IO::readCSV(const std::string &filePath) {
     fstream fin;
-    
+
     fin.open(filePath, ios::in);
-    
+
     string fileString;
     fin >> fileString;
 
     vector<vector<string>> returnValue;
 
-    for (const string& row : split(fileString, '\n')) {
+    for (const string &row: split(fileString, '\n')) {
         returnValue.push_back(split(row, ','));
     }
-    
+
     return returnValue;
 }
 
 std::vector<std::string> IO::split(std::string str, char separator) {
-    int startIndex =0;
+    int startIndex = 0;
     int endIndex;
 
     vector<string> returnValue;

@@ -2,26 +2,31 @@
 #ifndef ASCIIADVENTUREGAME_ITEM_H
 #define ASCIIADVENTUREGAME_ITEM_H
 
-#include "Level.h"
 
-// Abstract class
-// Contains the basic methods and attributes required for all item objects; inherited by the various item types that
-// game designer might want.
-// Because of how we are doing csv template files, inherited item classes will be more along the lines of Drink, Food,
-// Weapon (maybe different types of weapons as well), light, etc)
+#include "Structs.h"
+
+// A basic item. Inherit from this for more advanced item types.
 class Item {
 public:
 
-    int getPosX();
-    int getPosY();
+    // An enum with all the different item types. Use to prevent casting or mixing up of different item types.
+    enum ItemType {
+        BASIC
+    };
 
-    char getColor();
-    char getSymbol();
+    [[nodiscard]] int getPosX() const;
+
+    [[nodiscard]] int getPosY() const;
+
+    [[nodiscard]] char getColor() const;
+
+    [[nodiscard]] char getSymbol() const;
 
 private:
-    Level::Position position{};
-    char color{};
-    char symbol{};
+    LevelPos position;
+    char color;
+    char symbol;
+    ItemType type;
 };
 
 
