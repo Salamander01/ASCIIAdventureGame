@@ -9,13 +9,13 @@
 #include "Item.h"
 #include "Monster.h"
 #include "Space.h"
+#include "Structs.h"
 
 // A class that deals with a single level. Currently, we are only planning on making support for single level games, so this class is essentially the world for now.
 class Level {
 public:
     // Constructors and Destructors
     Level();
-
     Level(std::vector<std::vector<Space>> world, std::vector<Item> items, std::vector<Monster> monsters);
 
     // Getters
@@ -28,6 +28,9 @@ public:
 
     // Get the monsters in the current level (primarily for printing)
     std::vector<Monster> getMonsters();
+
+    // Get Space at Position
+    Space getSpaceAtPos(LevelPos pos);
 
     // Overloaded operators for saving and loading from a file. Will NOT load and save from template files but from save files.
 
