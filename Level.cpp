@@ -37,3 +37,7 @@ std::ostream &operator<<(ostream &out, const Level &level) {
     out << "\n";
     return out;
 }
+
+Space Level::getSpaceAtPos(LevelPos pos) {
+    return this->levelVector[pos.y][pos.x];
+}
