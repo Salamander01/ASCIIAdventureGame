@@ -1,7 +1,5 @@
 
-#ifndef ASCIIADVENTUREGAME_PLAYER_H
-#define ASCIIADVENTUREGAME_PLAYER_H
-
+#pragma once
 
 #include "Structs.h"
 
@@ -13,6 +11,3 @@ public:
 private:
     LevelPos position;
 };
-
-
-#endif //ASCIIADVENTUREGAME_PLAYER_H

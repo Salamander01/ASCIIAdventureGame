@@ -1,7 +1,5 @@
 
-#ifndef ASCIIADVENTUREGAME_ITEM_H
-#define ASCIIADVENTUREGAME_ITEM_H
-
+#pragma once
 
 #include "Structs.h"
 
@@ -28,6 +26,3 @@ private:
     char symbol;
     ItemType type;
 };
-
-
-#endif //ASCIIADVENTUREGAME_ITEM_H

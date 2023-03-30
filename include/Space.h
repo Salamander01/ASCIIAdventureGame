@@ -1,7 +1,5 @@
 
-#ifndef ASCIIADVENTUREGAME_SPACE_H
-#define ASCIIADVENTUREGAME_SPACE_H
-
+#pragma once
 
 #include <iostream>
 #include <map>
@@ -35,6 +33,3 @@ private:
 
     std::string name;
 };
-
-
-#endif //ASCIIADVENTUREGAME_SPACE_H

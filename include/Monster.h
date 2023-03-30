@@ -1,7 +1,5 @@
 
-#ifndef ASCIIADVENTUREGAME_MONSTER_H
-#define ASCIIADVENTUREGAME_MONSTER_H
-
+#pragma once
 
 #include "Structs.h"
 
@@ -20,6 +18,3 @@ private:
     char color{};
     char symbol{};
 };
-
-
-#endif //ASCIIADVENTUREGAME_MONSTER_H

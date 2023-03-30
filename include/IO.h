@@ -1,7 +1,5 @@
 
-#ifndef ASCIIADVENTUREGAME_IO_H
-#define ASCIIADVENTUREGAME_IO_H
-
+#pragma once
 
 #include "Level.h"
 
@@ -44,6 +42,3 @@ private:
     // A single character to represent the background color when displaying.
     char backgroundColor;
 };
-
-
-#endif //ASCIIADVENTUREGAME_IO_H

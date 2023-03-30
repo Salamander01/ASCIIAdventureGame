@@ -1,7 +1,5 @@
 
-#ifndef ASCIIADVENTUREGAME_LEVEL_H
-#define ASCIIADVENTUREGAME_LEVEL_H
-
+#pragma once
 
 #include <string>
 #include <vector>
@@ -16,6 +14,7 @@ class Level {
 public:
     // Constructors and Destructors
     Level();
+
     Level(std::vector<std::vector<Space>> world, std::vector<Item> items, std::vector<Monster> monsters);
 
     // Getters
@@ -47,6 +46,3 @@ private:
     std::vector<Monster> monsters;
 
 };
-
-
-#endif //ASCIIADVENTUREGAME_LEVEL_H
