@@ -57,22 +57,22 @@ void IO::setCursorPosition(int x, int y) {
 
 std::vector<std::vector<std::string>> IO::readCSV(const std::string &filePath) {
 
-    ifstream t("../resources/" + filePath);
+    ifstream fin("../resources/" + filePath);
     stringstream buffer;
-    buffer << t.rdbuf();
-    string fileString = buffer.str();
+    buffer << fin.rdbuf();
 
     string valid;
-    bool comment = false;
-    for (int i = 0; i < fileString.length(); i++) {
-        if (fileString[i] == '/' && fileString[i + 1] == '*') {
-            comment = true;
-        } else if (fileString[i - 2] == '*' && fileString[i - 1] == '/') {
-            comment = false;
+    while (buffer.good()) {
+        // Get the next character
+        char temp = (char) buffer.get();
+        // If statement to check if a comment start has been reached
+        if (temp == '/' && buffer.peek() == '*') {
+            // Iterates through the buffer until a comment close is reached
+            while (!(buffer.get() == '*' && buffer.get() == '/'));
+            // Gets the next character ; prevents the opening '/' from being added to valid
+            temp = (char) buffer.get();
         }
-        if (!comment) {
-            valid.push_back(fileString[i]);
-        }
+        valid.push_back(temp);
     }
 
 
