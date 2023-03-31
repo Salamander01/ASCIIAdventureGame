@@ -1,6 +1,9 @@
 
 #include <windows.h>
 #include <fstream>
+#include <string>
+#include <streambuf>
+#include <sstream>
 
 #include "IO.h"
 
@@ -53,16 +56,29 @@ void IO::setCursorPosition(int x, int y) {
 }
 
 std::vector<std::vector<std::string>> IO::readCSV(const std::string &filePath) {
-    fstream fin;
 
-    fin.open(filePath, ios::in);
+    ifstream t("../resources/" + filePath);
+    stringstream buffer;
+    buffer << t.rdbuf();
+    string fileString = buffer.str();
 
-    string fileString;
-    fin >> fileString;
+    string valid;
+    bool comment = false;
+    for (int i = 0; i < fileString.length(); i++) {
+        if (fileString[i] == '/' && fileString[i + 1] == '*') {
+            comment = true;
+        } else if (fileString[i - 2] == '*' && fileString[i - 1] == '/') {
+            comment = false;
+        }
+        if (!comment) {
+            valid.push_back(fileString[i]);
+        }
+    }
+
 
     vector<vector<string>> returnValue;
 
-    for (const string &row: split(fileString, '\n')) {
+    for (const string &row: split(valid, '\n')) {
         returnValue.push_back(split(row, ','));
     }
 
