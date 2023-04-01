@@ -2,16 +2,12 @@
 #include <windows.h>
 #include <fstream>
 #include <string>
-#include <streambuf>
 #include <sstream>
+#include <iostream>
 
 #include "IO.h"
 
 using namespace std;
-
-IO::IO() {
-    this->backgroundColor = '0';
-}
 
 void IO::output(Level level) {
     setCursorPosition(0, 0);
@@ -20,7 +16,7 @@ void IO::output(Level level) {
     vector<vector<Space>> spaceVector = level.getVectorArray();
     for (const vector<Space> &spaceVectorRow: spaceVector) {
         for (const Space &space: spaceVectorRow) {
-            setPrintColor(space.getColor());
+            setPrintColor(space.getColor(), level.getBackgroundColor());
             cout << space.getSymbol();
         }
         cout << "\n";
@@ -30,7 +26,7 @@ void IO::output(Level level) {
     vector<Item> items = level.getItems();
     for (Item item: items) {
         setCursorPosition(item.getPosX(), item.getPosY());
-        setPrintColor(item.getColor());
+        setPrintColor(item.getColor(), level.getBackgroundColor());
         cout << item.getSymbol();
     }
 
@@ -38,15 +34,15 @@ void IO::output(Level level) {
     vector<Monster> monsters = level.getMonsters();
     for (Monster monster: monsters) {
         setCursorPosition(monster.getPosX(), monster.getPosY());
-        setPrintColor(monster.getColor());
+        setPrintColor(monster.getColor(), level.getBackgroundColor());
         cout << monster.getSymbol();
     }
 
 }
 
-void IO::setPrintColor(char textColor) const {
+void IO::setPrintColor(char textColor, char backgroundColor) {
     string colorCommand = "Color ";
-    colorCommand.push_back(this->backgroundColor);
+    colorCommand.push_back(backgroundColor);
     colorCommand.push_back(textColor);
     system(colorCommand.data());
 }
@@ -104,4 +100,3 @@ std::vector<std::string> IO::split(std::string str, char separator) {
 
     return returnValue;
 }
-

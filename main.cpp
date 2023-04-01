@@ -13,6 +13,12 @@ int main() {
     return 0;
 }
 
+void levelCreationTestAndIOUpdateMethodTest() {
+    Level testLevel = Level({
+                                    {Space('#', false, "wall", 'f'), Space('.', true, "air", 'f')}
+                            }, {}, {}, 0);
+}
+
 void readCSVTest() {
     // Simple readCSV (comments) test
     vector<vector<string>> test = IO::readCSV("templates/SpaceTypesTemplate.csv");

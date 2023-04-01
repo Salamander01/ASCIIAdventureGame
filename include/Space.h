@@ -1,15 +1,13 @@
 
 #pragma once
 
-#include <iostream>
-#include <map>
+#include <string>
 
 class Space {
 public:
     // Constructors
     Space();
-
-    Space(char symbol, bool passable, std::string name);
+    Space(char symbol, bool passable, std::string name, char color);
 //    Space(const Space &space);
 
 

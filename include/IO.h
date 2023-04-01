@@ -8,11 +8,8 @@ class IO {
 public:
     // Constructors
 
-    // Default Constructor
-    IO();
-
     // Redraws the console window with the level object given.
-    void output(Level level);
+    static void output(Level level);
 
 
     // CSV management methods
@@ -34,11 +31,8 @@ private:
     static std::vector<std::string> split(std::string str, char separator);
 
     // Sets the console text color
-    void setPrintColor(char textColor) const;
+    static void setPrintColor(char textColor, char backgroundColor);
 
     // Sets the cursor position
     static void setCursorPosition(int x, int y);
-
-    // A single character to represent the background color when displaying.
-    char backgroundColor;
 };
