@@ -1,4 +1,6 @@
 
+#include <fstream>
+
 #include "Space.h"
 
 using namespace std;
@@ -13,8 +15,7 @@ Space::Space(char symbol, bool passable, std::string name, char color) {
 }
 
 std::ostream &operator<<(ostream &out, const Space &space) {
-//    out << space.symbol << space.color << space.passable << space.name;
-// TODO doesn't want to allow casting from char to string. Need to find a way to get something like that to work.
+    out << space.symbol << space.color << space.passable << space.name;
     return out;
 }
 
